@@ -1,12 +1,13 @@
-AWS VPC + Private EC2 NGINX Website with Application Load Balancer
-Project Overview
+**AWS VPC + Private EC2 NGINX Website with Application Load Balancer**
+
+**Project Overview**
 
 This project demonstrates how to host a website securely on a private EC2 instance using NGINX, while exposing it to the internet through an Application Load Balancer (ALB) inside a custom VPC.
 
 The architecture follows a production-style AWS network design where the web server is not directly exposed to the internet.
 
 
-Architecture Diagram
+**Architecture Diagram**
 
 Internet
    │
@@ -40,7 +41,7 @@ Security Groups
 Linux (Ubuntu)
 
 
-Step 1 – Create VPC
+**Step 1 – Create VPC**
 
 Go to VPC Dashboard
 
@@ -69,7 +70,7 @@ NAT Gateway
 
 Route tables
 
-Step 2 – Launch Private EC2 Instance
+**Step 2 – Launch Private EC2 Instance**
 
 Go to EC2 → Launch Instance
 
@@ -87,7 +88,7 @@ Source: Load Balancer Security Group
 
 Launch instance.
 
-Step 3 – Connect to Private EC2
+**Step 3 – Connect to Private EC2**
 
 Connect using EC2 Instance Connect or bastion method.
 
@@ -106,7 +107,8 @@ sudo systemctl start nginx
 Check service:
 
 sudo systemctl status nginx
-Step 4 – Create Target Group
+
+**Step 4 – Create Target Group**
 
 Go to:
 
@@ -124,7 +126,8 @@ Register the private EC2 instance.
 Wait until target status becomes:
 
 Healthy
-Step 5 – Create Application Load Balancer
+
+**Step 5 – Create Application Load Balancer**
 
 Go to:
 
@@ -142,7 +145,8 @@ Listener: HTTP 80
 
 Attach the target group created earlier.
 
-Step 6 – Configure Security Groups
+**Step 6 – Configure Security Groups**
+
 Load Balancer Security Group
 
 Inbound rules:
@@ -156,7 +160,7 @@ HTTP 80 → Load Balancer Security Group
 
 This allows only the load balancer to access the server.
 
-Step 7 – Access the Website
+**Step 7 – Access the Website**
 
 Copy the Load Balancer DNS name.
 
@@ -191,8 +195,8 @@ Deploy using Terraform
 
 Use Route53 domain
 
-Author
+******Author
 
 Saurav Chintamni Raut
 
-IT Support Engineer | Learning DevOps | AWS | Linux | Networking
+IT Support Engineer | Learning DevOps | AWS | Linux | Networking**************
